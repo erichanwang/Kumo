@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="kl-container">
+    <header class="kl-header">
+      <div class="kl-header-top">
+        <h1 class="kl-logo">☁️ Kumo</h1>
+        <div class="kl-header-right">
+          <span class="kl-plan-badge" id="plan-badge">Free</span>
+          <label class="kl-theme-toggle" title="Toggle theme">
+            <input type="checkbox" id="toggle-theme" />
+            <span class="kl-theme-slider">🌙</span>
+          </label>
+        </div>
+      </div>
+      <p class="kl-tagline" id="auth-tagline">Read Japanese anywhere</p>
+    </header>
+
+    <section class="kl-section">
+      <h2 class="kl-section-title">Display</h2>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Furigana</span>
+          <span class="kl-toggle-desc">Show readings above kanji</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-furigana" checked />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Number Furigana</span>
+          <span class="kl-toggle-desc">Show readings above kanji numerals (一, 二, 三…)</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-number-furigana" checked />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Katakana Furigana</span>
+          <span class="kl-toggle-desc">Show readings above katakana words</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-katakana-furigana" />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Romaji</span>
+          <span class="kl-toggle-desc">Show romanized readings in popups</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-romaji" />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Furigana Color</span>
+          <span class="kl-toggle-desc">Customize the reading color above kanji</span>
+        </div>
+        <input type="color" id="furigana-color" class="kl-color-picker" value="#e8a000" />
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Furigana Size</span>
+          <span class="kl-toggle-desc">Reading text size relative to kanji</span>
+        </div>
+        <div class="kl-radio-group" id="furigana-size-group">
+          <label class="kl-radio-option" data-value="small">
+            <input type="radio" name="furigana-size" value="small" />
+            <span>S</span>
+          </label>
+          <label class="kl-radio-option" data-value="medium">
+            <input type="radio" name="furigana-size" value="medium" checked />
+            <span>M</span>
+          </label>
+          <label class="kl-radio-option" data-value="large">
+            <input type="radio" name="furigana-size" value="large" />
+            <span>L</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="kl-section">
+      <h2 class="kl-section-title">Reading</h2>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Show Popup Card</span>
+          <span class="kl-toggle-desc">Show definition card when hovering words</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-popup-card" checked />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Hide Known Furigana</span>
+          <span class="kl-toggle-desc">Hide readings above words you already know</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-hide-known" />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Auto-play Audio</span>
+          <span class="kl-toggle-desc">Pronounce word aloud on hover</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-audio" checked />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Offline Mode</span>
+          <span class="kl-toggle-desc">Skip remote API lookups, local dictionary only</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-offline" />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Card Opacity</span>
+          <span class="kl-toggle-desc">Transparency of the hover definition card</span>
+        </div>
+        <input type="range" id="slider-opacity" class="kl-range" min="10" max="90" value="30" />
+      </div>
+    </section>
+
+    <section class="kl-section">
+      <h2 class="kl-section-title">Video</h2>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Video Captions</span>
+          <span class="kl-toggle-desc">Furigana on YouTube, Netflix &amp; more</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-youtube" checked />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Dual Subtitles (Netflix)</span>
+          <span class="kl-toggle-desc">Second subtitle bar with furigana below video</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-dual-subs" />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Auto-pause on Unknown</span>
+          <span class="kl-toggle-desc">Pause video when new words appear</span>
+        </div>
+        <label class="kl-switch">
+          <input type="checkbox" id="toggle-auto-pause" />
+          <span class="kl-slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="kl-section">
+      <h2 class="kl-section-title">Spaced Repetition</h2>
+
+      <div class="kl-toggle-row">
+        <div class="kl-toggle-label">
+          <span>Cards Per Day</span>
+          <span class="kl-toggle-desc">Daily SRS review card limit</span>
+        </div>
+        <div class="kl-number-picker">
+          <button class="kl-num-btn" id="num-srs-dec" aria-label="Decrease">−</button>
+          <span class="kl-num-value" id="srs-cards-day">20</span>
+          <button class="kl-num-btn" id="num-srs-inc" aria-label="Increase">+</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="kl-section">
+      <h2 class="kl-section-title">Quick Review</h2>
+      <div class="kl-srs-mini">
+        <div class="kl-srs-mini-stat">
+          <span class="kl-srs-mini-value" id="stat-srs-due-quick">0</span>
+          <span class="kl-srs-mini-label">Due</span>
+        </div>
+        <div class="kl-srs-mini-stat">
+          <span class="kl-srs-mini-value" id="stat-srs-total-quick">0</span>
+          <span class="kl-srs-mini-label">Total</span>
+        </div>
+        <button class="kl-btn-primary kl-srs-mini-btn" id="btn-open-srs">🔄 Review Now</button>
+      </div>
+    </section>
+
+    <section class="kl-section">
+      <h2 class="kl-section-title">Today's Stats</h2>
+      <div class="kl-today-stats">
+        <div class="kl-today-stat">
+          <span class="kl-today-value" id="stat-today-looked">0</span>
+          <span class="kl-today-label">Looked Up</span>
+        </div>
+        <div class="kl-today-stat">
+          <span class="kl-today-value" id="stat-today-saved">0</span>
+          <span class="kl-today-label">Saved</span>
+        </div>
+        <div class="kl-today-stat">
+          <span class="kl-today-value" id="stat-today-mined">0</span>
+          <span class="kl-today-label">Mined</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="kl-section">
+      <h2 class="kl-section-title">Progress</h2>
+
+      <div class="kl-stats">
+        <div class="kl-stat">
+          <span class="kl-stat-value" id="stat-known">0</span>
+          <span class="kl-stat-label">Known</span>
+        </div>
+        <div class="kl-stat">
+          <span class="kl-stat-value" id="stat-saved">0</span>
+          <span class="kl-stat-label">Saved</span>
+        </div>
+        <div class="kl-stat">
+          <span class="kl-stat-value" id="stat-srs-total">0</span>
+          <span class="kl-stat-label">SRS Cards</span>
+        </div>
+        <div class="kl-stat">
+          <span class="kl-stat-value" id="stat-srs-due">0</span>
+          <span class="kl-stat-label">Due</span>
+        </div>
+      </div>
+
+      <div class="kl-jlpt-bars">
+        <div class="kl-jlpt-row">
+          <span class="kl-jlpt-label n5">N5</span>
+          <div class="kl-progress-track">
+            <div class="kl-progress-fill n5" id="bar-n5" style="width: 0%"></div>
+          </div>
+          <span class="kl-progress-pct" id="pct-n5">0%</span>
+        </div>
+        <div class="kl-jlpt-row">
+          <span class="kl-jlpt-label n4">N4</span>
+          <div class="kl-progress-track">
+            <div class="kl-progress-fill n4" id="bar-n4" style="width: 0%"></div>
+          </div>
+          <span class="kl-progress-pct" id="pct-n4">0%</span>
+        </div>
+        <div class="kl-jlpt-row">
+          <span class="kl-jlpt-label n3">N3</span>
+          <div class="kl-progress-track">
+            <div class="kl-progress-fill n3" id="bar-n3" style="width: 0%"></div>
+          </div>
+          <span class="kl-progress-pct" id="pct-n3">0%</span>
+        </div>
+        <div class="kl-jlpt-row">
+          <span class="kl-jlpt-label n2">N2</span>
+          <div class="kl-progress-track">
+            <div class="kl-progress-fill n2" id="bar-n2" style="width: 0%"></div>
+          </div>
+          <span class="kl-progress-pct" id="pct-n2">0%</span>
+        </div>
+        <div class="kl-jlpt-row">
+          <span class="kl-jlpt-label n1">N1</span>
+          <div class="kl-progress-track">
+            <div class="kl-progress-fill n1" id="bar-n1" style="width: 0%"></div>
+          </div>
+          <span class="kl-progress-pct" id="pct-n1">0%</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="kl-footer">
+      <button class="kl-btn-primary" id="btn-wordbank">📚 Word Bank</button>
+      <button class="kl-btn-primary" id="btn-srs">🔄 SRS Review</button>
+      <button class="kl-btn-primary kl-btn-secondary" id="btn-quiz">🧠 Quiz</button>
+      <button class="kl-btn-primary kl-btn-secondary" id="btn-dashboard">📊 Dashboard</button>
+      <button class="kl-btn-primary kl-btn-secondary" id="btn-sentences">📝 Sentences</button>
+      <button class="kl-btn-primary kl-btn-secondary" id="btn-backup">💾 Backup</button>
+      <button class="kl-btn-primary kl-btn-secondary" id="btn-reset">⚙️ Reset to Defaults</button>
+      <hr class="kl-footer-divider" />
+      <button class="kl-btn-primary kl-btn-account" id="btn-account">👤 Account</button>
+    </footer>
+
+    <!-- Audio context resume fallback -->
+    <button id="kumo-audio-resume" style="display:none"></button>
+  </div>
+
+  <script type="module" src="popup.ts"></script>
+</body>
+</html>

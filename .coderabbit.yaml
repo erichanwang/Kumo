@@ -1,0 +1,85 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: en-US
+tone_instructions: "Be concise, direct, and high-signal. Focus on correctness, privacy, security, maintainability, and Chrome Web Store compliance."
+
+reviews:
+  profile: assertive
+  request_changes_workflow: true
+  high_level_summary: true
+  review_details: true
+  commit_status: true
+  fail_commit_status: true
+  poem: false
+  in_progress_fortune: false
+  enable_prompt_for_ai_agents: true
+  path_filters:
+    - "!node_modules/**"
+    - "!dist/**"
+    - "!app/dist/**"
+    - "!src/data/**"
+    - "!public/dict/**"
+    - "!package-lock.json"
+    - "!app/package-lock.json"
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+    base_branches:
+      - main
+  tools:
+    eslint:
+      enabled: true
+    markdownlint:
+      enabled: true
+    shellcheck:
+      enabled: true
+    sqlfluff:
+      enabled: true
+    trivy:
+      enabled: true
+    osv-scanner:
+      enabled: true
+    gitleaks:
+      enabled: true
+  path_instructions:
+    - path: "src/content/**"
+      instructions: >
+        This is Manifest V3 content-script code that runs on arbitrary web pages.
+        Review for defensive DOM handling, observer loops, layout breakage on host pages,
+        main-thread jank, and accidental runtime network calls. DOM mutations must not throw
+        into host pages.
+    - path: "src/lib/**"
+      instructions: >
+        Shared extension code must preserve local-first privacy. Dictionary lookups should
+        use bundled data unless a feature is explicitly documented as optional network/auth
+        functionality. Watch for Chrome storage quota issues and MV3 service-worker constraints.
+    - path: "manifest.json"
+      instructions: >
+        Review permissions and web-accessible resources carefully for Chrome Web Store policy,
+        least privilege, remote-code restrictions, and user privacy disclosure alignment.
+    - path: "app/src/pages/Privacy.tsx"
+      instructions: >
+        Privacy copy must match actual product behavior, especially Supabase auth, Stripe
+        billing, Chrome storage, optional network use, and local dictionary processing.
+    - path: "app/src/pages/Terms.tsx"
+      instructions: >
+        Terms copy must not contradict the repository license, paid-plan behavior, bundled
+        dictionary attribution, or Chrome extension distribution requirements.
+    - path: "supabase/**"
+      instructions: >
+        Review row-level security, service-role boundaries, webhook trust, Stripe signature
+        verification, and schema changes that could expose user subscription data.
+
+knowledge_base:
+  opt_out: false
+  web_search:
+    enabled: true
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "README.md"
+      - "INSTRUCTIONS.md"
+      - "PRD.md"
+      - "MVP.md"
+      - "agent.md"
+      - "test/README.md"

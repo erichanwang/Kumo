@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo — SRS Review</title>
+  <link rel="stylesheet" href="srs.css" />
+</head>
+<body>
+  <div class="srs-container">
+    <header class="srs-header">
+      <h1 class="srs-title">🔄 SRS Review</h1>
+      <div class="srs-header-stats">
+        <span class="srs-stat-badge" id="srs-due-count">0 due</span>
+        <span class="srs-stat-badge mastered" id="srs-mastered-count">0 mastered</span>
+        <button class="srs-stat-btn" id="btn-dashboard" title="Dashboard">📊</button>
+      </div>
+    </header>
+
+    <!-- JLPT Filter -->
+    <div class="srs-jlpt-filter" id="srs-jlpt-filter" style="display:none"></div>
+
+    <!-- Study Mode Toggle -->
+    <div class="srs-mode-toggle" id="srs-mode-toggle">
+      <button class="srs-mode-btn active" data-mode="due">⏰ Due Only</button>
+      <button class="srs-mode-btn" data-mode="all">📚 Study All</button>
+      <span class="srs-mode-badge" id="srs-mode-badge">Due Only</span>
+    </div>
+
+    <div id="srs-empty" class="srs-empty">
+      <p>No cards due for review! 🎉</p>
+      <p class="srs-empty-sub">Add words from the Word Bank or click "🔄 Study" on any word.</p>
+      <button class="srs-btn srs-btn-secondary" id="btn-wordbank">📚 Go to Word Bank</button>
+    </div>
+
+    <div id="srs-review" class="srs-review hidden">
+      <div class="srs-card" id="srs-card">
+        <div class="srs-card-face" id="srs-front">
+          <span class="srs-word" id="srs-word-display"></span>
+          <span class="srs-jlpt-badge" id="srs-jlpt-badge"></span>
+        </div>
+        <div class="srs-card-face hidden" id="srs-back">
+          <span class="srs-reading" id="srs-reading-display"></span>
+          <div class="srs-definitions" id="srs-defs-display"></div>
+          <div class="srs-card-meta">
+            <div class="srs-meta-item"><span class="srs-meta-label">Interval</span><span id="srs-interval-display">—</span></div>
+            <div class="srs-meta-item"><span class="srs-meta-label">Ease</span><span id="srs-ease-display">—</span></div>
+            <div class="srs-meta-item"><span class="srs-meta-label">Stage</span><span id="srs-stage-display">—</span></div>
+            <div class="srs-meta-item"><span class="srs-meta-label">Next</span><span id="srs-nextreview-display">—</span></div>
+            <div class="srs-meta-item"><span class="srs-meta-label">Reviews</span><span id="srs-reps-display">—</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="srs-actions" id="srs-actions-front">
+        <button class="srs-btn srs-btn-show" id="btn-show-answer">Show Answer</button>
+      </div>
+
+      <div class="srs-actions hidden" id="srs-actions-back">
+        <p class="srs-rate-label">How well did you remember?</p>
+        <div class="srs-rate-buttons">
+          <button class="srs-rate-btn" data-quality="0" title="Complete blackout">😰<br>Again</button>
+          <button class="srs-rate-btn" data-quality="1" title="Remembered after seeing answer">🤔<br>Hard</button>
+          <button class="srs-rate-btn" data-quality="3" title="Correct with difficulty">😊<br>Good</button>
+          <button class="srs-rate-btn" data-quality="4" title="Correct after hesitation">😎<br>Easy</button>
+          <button class="srs-rate-btn" data-quality="5" title="Perfect response">🚀<br>Perfect</button>
+        </div>
+      </div>
+
+      <div class="srs-progress">
+        <div class="srs-progress-bar">
+          <div class="srs-progress-fill" id="srs-progress-fill"></div>
+        </div>
+        <span class="srs-progress-text" id="srs-progress-text">0 / 0</span>
+      </div>
+    </div>
+
+    <div class="srs-summary hidden" id="srs-summary">
+      <h2>Review Complete! 🎉</h2>
+      <div class="srs-summary-stats">
+        <div class="srs-summary-stat">
+          <span class="srs-summary-value" id="srs-summary-total">0</span>
+          <span class="srs-summary-label">Reviewed</span>
+        </div>
+        <div class="srs-summary-stat correct">
+          <span class="srs-summary-value" id="srs-summary-correct">0</span>
+          <span class="srs-summary-label">Correct</span>
+        </div>
+        <div class="srs-summary-stat">
+          <span class="srs-summary-value" id="srs-summary-accuracy">0%</span>
+          <span class="srs-summary-label">Accuracy</span>
+        </div>
+      </div>
+      <div class="srs-summary-actions">
+        <button class="srs-btn srs-btn-primary" id="btn-retry">🔄 Study Again</button>
+        <button class="srs-btn srs-btn-secondary" id="btn-back-home">🏠 Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="srs.ts"></script>
+</body>
+</html>

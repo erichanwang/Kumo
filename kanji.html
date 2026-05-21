@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="srs_title">Kanji Details – Kumo</title>
+  <link rel="stylesheet" href="kanji.css" />
+</head>
+<body class="kumo-dark">
+  <header class="kanji-header">
+    <button id="btn-back" class="kanji-back-btn">&larr; <span data-i18n="common_back">Back</span></button>
+    <div class="kanji-search">
+      <input type="text" id="kanji-input" placeholder="Search kanji..." maxlength="1" autofocus />
+    </div>
+  </header>
+
+  <main id="kanji-main">
+    <div id="kanji-empty" class="kanji-empty">
+      <p>Enter a kanji character above to view details.</p>
+    </div>
+
+    <div id="kanji-detail" class="kanji-detail hidden">
+      <!-- Large kanji display -->
+      <div class="kanji-large" id="kanji-display">字</div>
+
+      <!-- Quick stats bar -->
+      <div class="kanji-stats" id="kanji-stats">
+        <div class="kanji-stat"><span class="stat-label">Strokes</span><span class="stat-value" id="stat-strokes">–</span></div>
+        <div class="kanji-stat"><span class="stat-label">JLPT</span><span class="stat-value" id="stat-jlpt">–</span></div>
+        <div class="kanji-stat"><span class="stat-label">Grade</span><span class="stat-value" id="stat-grade">–</span></div>
+        <div class="kanji-stat"><span class="stat-label">Frequency</span><span class="stat-value" id="stat-freq">–</span></div>
+      </div>
+
+      <!-- Readings -->
+      <section class="kanji-section">
+        <h3>On'yomi (音読み)</h3>
+        <div class="kanji-readings" id="onyomi-list">–</div>
+      </section>
+
+      <section class="kanji-section">
+        <h3>Kun'yomi (訓読み)</h3>
+        <div class="kanji-readings" id="kunyomi-list">–</div>
+      </section>
+
+      <!-- Meanings -->
+      <section class="kanji-section">
+        <h3>Meanings</h3>
+        <div class="kanji-meanings" id="meanings-list">–</div>
+      </section>
+
+      <!-- Radicals -->
+      <section class="kanji-section">
+        <h3>Radical</h3>
+        <div class="kanji-radical" id="radical-info">–</div>
+      </section>
+
+      <!-- Stroke order animation -->
+      <section class="kanji-section">
+        <h3>Stroke Order</h3>
+        <div class="kanji-diagram" id="stroke-diagram">
+          <p class="kanji-placeholder">Stroke order preview not available in static mode.</p>
+        </div>
+      </section>
+
+      <!-- Actions -->
+      <div class="kanji-actions">
+        <button id="btn-pronounce" class="kanji-action-btn">🔊 Pronounce On'yomi</button>
+        <button id="btn-add-srs" class="kanji-action-btn kanji-action-primary">🔄 Add to SRS</button>
+        <button id="btn-save" class="kanji-action-btn">⭐ Save to Word Bank</button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./kanji.ts"></script>
+</body>
+</html>

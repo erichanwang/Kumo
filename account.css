@@ -1,0 +1,278 @@
+/* Account Page Styles for Kumo */
+/* Reuses popup.css variables and patterns */
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  background: #0f0f1a;
+  color: #e0e0e0;
+  font-family: -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans CJK SC', sans-serif;
+}
+
+.kl-account-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+/* ── Loading ── */
+.kl-account-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 80px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.kl-account-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255,255,255,0.06);
+  border-top-color: #3a6ff5;
+  border-radius: 50%;
+  animation: kl-spin 0.8s linear infinite;
+}
+
+@keyframes kl-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Header ── */
+.kl-account-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.kl-account-logo {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #c0c8e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+
+.kl-account-tagline {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ── Tabs ── */
+.kl-account-tabs {
+  display: flex;
+  gap: 4px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.kl-account-tab {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #888;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.kl-account-tab:hover {
+  color: #ccc;
+}
+
+.kl-account-tab-active {
+  background: #3a6ff5;
+  color: #fff;
+}
+
+.kl-account-tab-active:hover {
+  color: #fff;
+}
+
+/* ── Forms ── */
+.kl-account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kl-account-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kl-account-field span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kl-account-field input {
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  color: #eee;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.kl-account-field input:focus {
+  border-color: #3a6ff5;
+}
+
+.kl-account-field input::placeholder {
+  color: #555;
+}
+
+.kl-account-hint {
+  font-size: 11px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.kl-account-error {
+  padding: 8px 12px;
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.2);
+  border-radius: 8px;
+  color: #f44336;
+  font-size: 12px;
+}
+
+.kl-account-submit {
+  margin-top: 4px;
+}
+
+/* ── Divider ── */
+.kl-account-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: #555;
+  font-size: 12px;
+}
+
+.kl-account-divider::before,
+.kl-account-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.kl-account-google {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #ddd !important;
+}
+
+.kl-account-google:hover {
+  background: rgba(255,255,255,0.08) !important;
+}
+
+/* ── Logged In View ── */
+.kl-account-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.kl-account-avatar {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+
+.kl-account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kl-account-email {
+  font-size: 14px;
+  font-weight: 600;
+  color: #eee;
+}
+
+.kl-account-plan {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e8a000;
+}
+
+/* ── Plan Details ── */
+.kl-account-plan-details {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 4px 0;
+  margin-bottom: 20px;
+}
+
+.kl-account-plan-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 13px;
+}
+
+.kl-account-plan-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.kl-account-plan-row span:first-child {
+  color: #999;
+}
+
+.kl-account-plan-row span:last-child {
+  color: #eee;
+  font-weight: 600;
+}
+
+/* ── Actions ── */
+.kl-account-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.kl-account-signout {
+  color: #f44336 !important;
+  border-color: rgba(244, 67, 54, 0.2) !important;
+}
+
+.kl-account-signout:hover {
+  background: rgba(244, 67, 54, 0.06) !important;
+  color: #f44336 !important;
+}

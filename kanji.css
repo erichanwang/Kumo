@@ -1,0 +1,212 @@
+:root {
+  --kumo-bg: #0f0f1e;
+  --kumo-bg-card: #141428;
+  --kumo-bg-input: #1a1a35;
+  --kumo-border: rgba(255,255,255,0.08);
+  --kumo-text: #f0f0f5;
+  --kumo-text-secondary: #a0a0b8;
+  --kumo-text-muted: #666680;
+  --kumo-accent: #3a6ff5;
+  --kumo-accent-hover: #5b8af7;
+  --kumo-success: #4caf50;
+  --kumo-warning: #ff9800;
+  --kumo-danger: #f44336;
+  --kumo-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--kumo-bg);
+  color: var(--kumo-text);
+  min-width: 400px;
+  min-height: 500px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.kanji-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--kumo-bg-card);
+  border-bottom: 1px solid var(--kumo-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.kanji-back-btn {
+  background: none;
+  border: 1px solid var(--kumo-border);
+  color: var(--kumo-text-secondary);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.kanji-back-btn:hover { background: rgba(255,255,255,0.05); color: var(--kumo-text); }
+
+.kanji-search {
+  flex: 1;
+}
+.kanji-search input {
+  width: 100%;
+  max-width: 200px;
+  padding: 8px 14px;
+  border: 1px solid var(--kumo-border);
+  border-radius: 10px;
+  background: var(--kumo-bg-input);
+  color: var(--kumo-text);
+  font-size: 18px;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.kanji-search input:focus { border-color: var(--kumo-accent); }
+
+/* Center content */
+.kanji-empty {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--kumo-text-muted);
+  font-size: 15px;
+}
+
+/* Detail view */
+.kanji-detail { padding: 32px 24px; }
+.kanji-detail.hidden { display: none; }
+
+.kanji-large {
+  font-size: 96px;
+  text-align: center;
+  padding: 24px;
+  margin-bottom: 24px;
+  color: var(--kumo-text);
+  font-family: 'Noto Sans JP', 'IPAMincho', serif;
+  text-shadow: 0 2px 12px rgba(58, 111, 245, 0.15);
+}
+
+/* Stats bar */
+.kanji-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.kanji-stat {
+  background: var(--kumo-bg-card);
+  border: 1px solid var(--kumo-border);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+.stat-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--kumo-text-muted);
+  margin-bottom: 4px;
+}
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kumo-text);
+}
+
+/* Sections */
+.kanji-section {
+  margin-bottom: 24px;
+}
+.kanji-section h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--kumo-text-muted);
+  margin-bottom: 8px;
+}
+
+.kanji-readings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.kanji-reading-tag {
+  background: var(--kumo-bg-card);
+  border: 1px solid var(--kumo-border);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--kumo-text);
+}
+
+.kanji-meanings {
+  font-size: 15px;
+  color: var(--kumo-text-secondary);
+  line-height: 1.7;
+}
+
+.kanji-radical {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.radical-char {
+  font-size: 36px;
+  font-family: 'Noto Sans JP', serif;
+  color: var(--kumo-text);
+  background: var(--kumo-bg-card);
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--kumo-border);
+}
+.radical-name {
+  color: var(--kumo-text-secondary);
+  font-size: 14px;
+}
+
+.kanji-diagram {
+  background: var(--kumo-bg-card);
+  border: 1px solid var(--kumo-border);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+}
+.kanji-placeholder {
+  color: var(--kumo-text-muted);
+  font-size: 13px;
+}
+
+/* Actions */
+.kanji-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--kumo-border);
+}
+.kanji-action-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--kumo-border);
+  background: var(--kumo-bg-card);
+  color: var(--kumo-text);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.kanji-action-btn:hover { background: rgba(255,255,255,0.05); border-color: var(--kumo-accent); }
+.kanji-action-primary { background: var(--kumo-accent); border-color: var(--kumo-accent); color: #fff; }
+.kanji-action-primary:hover { background: var(--kumo-accent-hover); }

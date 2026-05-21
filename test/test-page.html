@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo — Local Test Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 2;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 32px 0 12px;
+      color: #555;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .article {
+      background: #fafafa;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+    .caption-area {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 16px 0;
+    }
+    .badge {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #666;
+      margin-right: 8px;
+    }
+    .test-note {
+      margin-top: 40px;
+      padding: 16px;
+      background: #fffbe6;
+      border: 1px solid #ffe58f;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #886600;
+    }
+  </style>
+</head>
+<body>
+  <h1>☁️ Kumo テストページ (Test Page)</h1>
+  <p class="badge">NHK Easy News style</p>
+  <p class="badge">Wikipedia style</p>
+  <p class="badge">YouTube Captions</p>
+
+  <h2>📰 ニュース記事 (News Article)</h2>
+  <div class="article">
+    <p>日本の気象庁によると、今日の東京都の最高気温は三十五度に達する見込みです。熱中症に十分注意してください。</p>
+    <p>新しい研究によると、毎日三十分の運動を行うことで、健康状態が大幅に改善されることが分かりました。</p>
+    <p>政府は経済政策の見直しを検討しており、来月にも具体的な方針を発表する予定です。</p>
+  </div>
+
+  <h2>📖 様々な文章 (Various Sentences)</h2>
+  <div class="article">
+    <p>私は毎朝六時に起きて、新聞を読みます。朝食は大抵パンと卵です。</p>
+    <p>図書館で勉強している学生がたくさんいます。静かにしてください。</p>
+    <p>来週の土曜日に友達と映画を見に行く約束をしました。</p>
+    <p>この料理の作り方を教えてください。材料は何が必要ですか。</p>
+    <p>彼は日本語が上手になりました。毎日練習しているそうです。</p>
+  </div>
+
+  <h2>📝 単語リスト (Word List)</h2>
+  <div class="article">
+    <p>学習 学校 学生 大学 先生 教室 図書館 勉強 試験 宿題</p>
+    <p>食べる 飲む 見る 聞く 話す 読む 書く 歩く 走る 泳ぐ</p>
+    <p>大きい 小さい 新しい 古い 美味しい 楽しい 難しい 易しい</p>
+  </div>
+
+  <h2>▶️ YouTube風字幕 (YouTube-style Captions)</h2>
+  <div class="caption-area">
+    <span class="ytp-caption-segment">今日は日本文化について話したいと思います。</span>
+  </div>
+  <div class="caption-area">
+    <span class="ytp-caption-segment">日本の伝統的な食事はとても健康的です。</span>
+  </div>
+  <div class="caption-area">
+    <span class="ytp-caption-segment">皆さんも是非、日本に旅行に行ってみてください。</span>
+  </div>
+
+  <div class="test-note">
+    <strong>🧪 Kumo Test Instructions:</strong><br />
+    1. Load this extension as "unpacked" in <code>chrome://extensions</code> (enable Developer Mode)<br />
+    2. Open this file (<code>test/test-page.html</code>) in Chrome<br />
+    3. Verify: furigana appears above kanji within 2 seconds<br />
+    4. Verify: hovering a word shows the popup with reading + definition<br />
+    5. Verify: clicking "⭐ Save" adds to word bank<br />
+    6. Verify: YouTube caption area shows furigana<br />
+    7. Open the extension popup — check stats and toggles work<br />
+    8. Open Word Bank — verify saved words appear<br />
+    <br />
+    <strong>Expected results:</strong><br />
+    • 気象庁 → きしょうちょう (furigana visible)<br />
+    • 勉強 → べんきょう (furigana visible)<br />
+    • Hover → popup with definition<br />
+    • Toggle off → all furigana disappears<br />
+  </div>
+</body>
+</html>

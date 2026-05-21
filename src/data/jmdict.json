@@ -1,0 +1,476 @@
+{
+  "気象庁": {
+    "reading": "きしょうちょう",
+    "definitions": ["Japan Meteorological Agency", "weather bureau"],
+    "jlpt": "N2",
+    "pos": "noun"
+  },
+  "東京都": {
+    "reading": "とうきょうと",
+    "definitions": ["Tokyo Metropolis", "Tokyo"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "最高": {
+    "reading": "さいこう",
+    "definitions": ["highest", "maximum", "supreme"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "気温": {
+    "reading": "きおん",
+    "definitions": ["temperature", "atmospheric temperature"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "度": {
+    "reading": "ど",
+    "definitions": ["degree", "counter for degrees"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "達": {
+    "reading": "たっする",
+    "definitions": ["to reach", "to attain"],
+    "jlpt": "N2",
+    "pos": "verb"
+  },
+  "見込み": {
+    "reading": "みこみ",
+    "definitions": ["expectation", "estimate", "forecast"],
+    "jlpt": "N2",
+    "pos": "noun"
+  },
+  "熱中症": {
+    "reading": "ねっちゅうしょう",
+    "definitions": ["heat stroke", "heat exhaustion"],
+    "jlpt": "N1",
+    "pos": "noun"
+  },
+  "十分": {
+    "reading": "じゅうぶん",
+    "definitions": ["enough", "sufficient", "plenty"],
+    "jlpt": "N4",
+    "pos": "adverb"
+  },
+  "注意": {
+    "reading": "ちゅうい",
+    "definitions": ["caution", "warning", "attention"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "研究": {
+    "reading": "けんきゅう",
+    "definitions": ["research", "study", "investigation"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "毎日": {
+    "reading": "まいにち",
+    "definitions": ["every day", "daily"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "運動": {
+    "reading": "うんどう",
+    "definitions": ["exercise", "movement", "campaign"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "行う": {
+    "reading": "おこなう",
+    "definitions": ["to perform", "to do", "to carry out"],
+    "jlpt": "N3",
+    "pos": "verb"
+  },
+  "健康": {
+    "reading": "けんこう",
+    "definitions": ["health", "well-being"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "状態": {
+    "reading": "じょうたい",
+    "definitions": ["state", "condition", "situation"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "大幅": {
+    "reading": "おおはば",
+    "definitions": ["substantial", "large", "drastic"],
+    "jlpt": "N2",
+    "pos": "noun"
+  },
+  "改善": {
+    "reading": "かいぜん",
+    "definitions": ["improvement", "betterment"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "政府": {
+    "reading": "せいふ",
+    "definitions": ["government", "administration"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "経済": {
+    "reading": "けいざい",
+    "definitions": ["economy", "economics"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "政策": {
+    "reading": "せいさく",
+    "definitions": ["policy", "political measures"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "見直し": {
+    "reading": "みなおし",
+    "definitions": ["review", "reconsideration", "revision"],
+    "jlpt": "N2",
+    "pos": "noun"
+  },
+  "検討": {
+    "reading": "けんとう",
+    "definitions": ["consideration", "examination", "study"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "来月": {
+    "reading": "らいげつ",
+    "definitions": ["next month"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "具体的": {
+    "reading": "ぐたいてき",
+    "definitions": ["specific", "concrete", "tangible"],
+    "jlpt": "N3",
+    "pos": "adjective"
+  },
+  "方針": {
+    "reading": "ほうしん",
+    "definitions": ["policy", "plan", "course"],
+    "jlpt": "N2",
+    "pos": "noun"
+  },
+  "発表": {
+    "reading": "はっぴょう",
+    "definitions": ["announcement", "publication", "presentation"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "予定": {
+    "reading": "よてい",
+    "definitions": ["plan", "schedule", "program"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "勉強": {
+    "reading": "べんきょう",
+    "definitions": ["study", "learning", "diligence"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "学生": {
+    "reading": "がくせい",
+    "definitions": ["student"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "図書館": {
+    "reading": "としょかん",
+    "definitions": ["library"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "静か": {
+    "reading": "しずか",
+    "definitions": ["quiet", "silent", "peaceful"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "来週": {
+    "reading": "らいしゅう",
+    "definitions": ["next week"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "土曜日": {
+    "reading": "どようび",
+    "definitions": ["Saturday"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "友達": {
+    "reading": "ともだち",
+    "definitions": ["friend", "companion"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "映画": {
+    "reading": "えいが",
+    "definitions": ["movie", "film"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "見る": {
+    "reading": "みる",
+    "definitions": ["to see", "to look at", "to watch"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "約束": {
+    "reading": "やくそく",
+    "definitions": ["promise", "appointment", "arrangement"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "料理": {
+    "reading": "りょうり",
+    "definitions": ["cooking", "cuisine", "dish"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "作り方": {
+    "reading": "つくりかた",
+    "definitions": ["how to make", "method of making"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "教える": {
+    "reading": "おしえる",
+    "definitions": ["to teach", "to tell", "to inform"],
+    "jlpt": "N4",
+    "pos": "verb"
+  },
+  "材料": {
+    "reading": "ざいりょう",
+    "definitions": ["ingredients", "materials"],
+    "jlpt": "N3",
+    "pos": "noun"
+  },
+  "必要": {
+    "reading": "ひつよう",
+    "definitions": ["necessary", "needed", "essential"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "彼": {
+    "reading": "かれ",
+    "definitions": ["he", "him", "boyfriend"],
+    "jlpt": "N5",
+    "pos": "pronoun"
+  },
+  "日本語": {
+    "reading": "にほんご",
+    "definitions": ["Japanese language"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "上手": {
+    "reading": "じょうず",
+    "definitions": ["skillful", "good at", "proficient"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "練習": {
+    "reading": "れんしゅう",
+    "definitions": ["practice", "training", "drill"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "学校": {
+    "reading": "がっこう",
+    "definitions": ["school"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "大学": {
+    "reading": "だいがく",
+    "definitions": ["university", "college"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "先生": {
+    "reading": "せんせい",
+    "definitions": ["teacher", "master", "doctor"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "教室": {
+    "reading": "きょうしつ",
+    "definitions": ["classroom"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "試験": {
+    "reading": "しけん",
+    "definitions": ["exam", "test", "trial"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "宿題": {
+    "reading": "しゅくだい",
+    "definitions": ["homework"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "食べる": {
+    "reading": "たべる",
+    "definitions": ["to eat", "to live on"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "飲む": {
+    "reading": "のむ",
+    "definitions": ["to drink", "to swallow", "to take (medicine)"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "聞く": {
+    "reading": "きく",
+    "definitions": ["to hear", "to listen", "to ask"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "話す": {
+    "reading": "はなす",
+    "definitions": ["to speak", "to talk", "to tell"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "読む": {
+    "reading": "よむ",
+    "definitions": ["to read"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "書く": {
+    "reading": "かく",
+    "definitions": ["to write", "to draw", "to compose"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "歩く": {
+    "reading": "あるく",
+    "definitions": ["to walk"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "走る": {
+    "reading": "はしる",
+    "definitions": ["to run"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "泳ぐ": {
+    "reading": "およぐ",
+    "definitions": ["to swim"],
+    "jlpt": "N5",
+    "pos": "verb"
+  },
+  "大きい": {
+    "reading": "おおきい",
+    "definitions": ["big", "large", "great"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "小さい": {
+    "reading": "ちいさい",
+    "definitions": ["small", "little", "tiny"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "新しい": {
+    "reading": "あたらしい",
+    "definitions": ["new", "novel", "fresh"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "古い": {
+    "reading": "ふるい",
+    "definitions": ["old", "ancient", "stale"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "美味しい": {
+    "reading": "おいしい",
+    "definitions": ["delicious", "tasty"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "楽しい": {
+    "reading": "たのしい",
+    "definitions": ["enjoyable", "fun", "pleasant"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "難しい": {
+    "reading": "むずかしい",
+    "definitions": ["difficult", "hard"],
+    "jlpt": "N5",
+    "pos": "adjective"
+  },
+  "易しい": {
+    "reading": "やさしい",
+    "definitions": ["easy", "simple", "kind"],
+    "jlpt": "N4",
+    "pos": "adjective"
+  },
+  "日本": {
+    "reading": "にほん",
+    "definitions": ["Japan"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "文化": {
+    "reading": "ぶんか",
+    "definitions": ["culture", "civilization"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "今日": {
+    "reading": "きょう",
+    "definitions": ["today"],
+    "jlpt": "N5",
+    "pos": "noun"
+  },
+  "思う": {
+    "reading": "おもう",
+    "definitions": ["to think", "to feel", "to believe"],
+    "jlpt": "N4",
+    "pos": "verb"
+  },
+  "伝統的": {
+    "reading": "でんとうてき",
+    "definitions": ["traditional", "conventional"],
+    "jlpt": "N3",
+    "pos": "adjective"
+  },
+  "食事": {
+    "reading": "しょくじ",
+    "definitions": ["meal", "diet"],
+    "jlpt": "N4",
+    "pos": "noun"
+  },
+  "健康的": {
+    "reading": "けんこうてき",
+    "definitions": ["healthy", "healthful"],
+    "jlpt": "N3",
+    "pos": "adjective"
+  },
+  "是非": {
+    "reading": "ぜひ",
+    "definitions": ["certainly", "by all means", "without fail"],
+    "jlpt": "N3",
+    "pos": "adverb"
+  },
+  "旅行": {
+    "reading": "りょこう",
+    "definitions": ["travel", "trip", "journey"],
+    "jlpt": "N4",
+    "pos": "noun"
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo Account</title>
+  <link rel="stylesheet" href="popup.css" />
+  <link rel="stylesheet" href="account.css" />
+</head>
+<body>
+  <div class="kl-account-container">
+    <!-- Loading state -->
+    <div class="kl-account-loading" id="account-loading">
+      <div class="kl-account-spinner"></div>
+      <p>Loading...</p>
+    </div>
+
+    <!-- Logged out view -->
+    <div class="kl-account-view" id="account-logged-out" style="display:none">
+      <div class="kl-account-header">
+        <h1 class="kl-account-logo">☁️ Kumo</h1>
+        <p class="kl-account-tagline">Sign in to unlock Pro features</p>
+      </div>
+
+      <div class="kl-account-tabs">
+        <button class="kl-account-tab kl-account-tab-active" data-tab="login">Sign In</button>
+        <button class="kl-account-tab" data-tab="signup">Sign Up</button>
+      </div>
+
+      <!-- Login form -->
+      <form class="kl-account-form" id="form-login">
+        <div class="kl-account-error" id="login-error" style="display:none"></div>
+        <label class="kl-account-field">
+          <span>Email</span>
+          <input type="email" id="login-email" placeholder="you@example.com" required />
+        </label>
+        <label class="kl-account-field">
+          <span>Password</span>
+          <input type="password" id="login-password" placeholder="••••••••" />
+          <small class="kl-account-hint">Leave blank for magic link</small>
+        </label>
+        <button type="submit" class="kl-btn-primary kl-account-submit">Sign In</button>
+      </form>
+
+      <!-- Signup form -->
+      <form class="kl-account-form" id="form-signup" style="display:none">
+        <div class="kl-account-error" id="signup-error" style="display:none"></div>
+        <label class="kl-account-field">
+          <span>Email</span>
+          <input type="email" id="signup-email" placeholder="you@example.com" required />
+        </label>
+        <label class="kl-account-field">
+          <span>Password</span>
+          <input type="password" id="signup-password" placeholder="At least 6 characters" required minlength="6" />
+        </label>
+        <button type="submit" class="kl-btn-primary kl-account-submit">Create Account</button>
+      </form>
+
+      <div class="kl-account-divider"><span>or</span></div>
+
+      <button class="kl-btn-primary kl-account-google" id="btn-google-signin">
+        Continue with Google
+      </button>
+    </div>
+
+    <!-- Logged in view -->
+    <div class="kl-account-view" id="account-logged-in" style="display:none">
+      <div class="kl-account-header">
+        <h1 class="kl-account-logo">☁️ Kumo</h1>
+        <p class="kl-account-tagline">Account</p>
+      </div>
+
+      <div class="kl-account-profile">
+        <div class="kl-account-avatar" id="account-avatar">👤</div>
+        <div class="kl-account-info">
+          <span class="kl-account-email" id="account-email">—</span>
+          <span class="kl-account-plan" id="account-plan">Free Plan</span>
+        </div>
+      </div>
+
+      <div class="kl-account-plan-details" id="account-plan-details">
+        <div class="kl-account-plan-row">
+          <span>Word Bank</span>
+          <span id="plan-wordbank">1,000 entries</span>
+        </div>
+        <div class="kl-account-plan-row">
+          <span>Subtitle Furigana</span>
+          <span id="plan-subtitle">100 words/session</span>
+        </div>
+        <div class="kl-account-plan-row">
+          <span>SRS Cards/Day</span>
+          <span id="plan-srs">10 cards</span>
+        </div>
+      </div>
+
+      <button class="kl-btn-primary" id="btn-upgrade">⬆ Upgrade to Pro</button>
+
+      <div class="kl-account-actions">
+        <button class="kl-btn-primary kl-btn-secondary" id="btn-refresh-plan">🔄 Refresh Plan</button>
+        <button class="kl-btn-primary kl-btn-secondary kl-account-signout" id="btn-signout">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="account.ts"></script>
+</body>
+</html>

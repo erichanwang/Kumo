@@ -1,0 +1,226 @@
+/* Data Manager styles for Kumo */
+
+.bu-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.bu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.bu-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bu-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--kumo-text);
+}
+
+.bu-back-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--kumo-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--kumo-text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.bu-back-btn:hover { background: rgba(255,255,255,0.05); color: var(--kumo-text); }
+
+/* Grid */
+.bu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+/* Cards */
+.bu-card {
+  background: var(--kumo-bg-card);
+  border: 1px solid var(--kumo-border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bu-card-icon {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+
+.bu-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--kumo-text);
+  margin-bottom: 8px;
+}
+
+.bu-card-desc {
+  font-size: 13px;
+  color: var(--kumo-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Export Stats */
+.bu-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 14px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+}
+
+.bu-stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--kumo-text-muted);
+  padding: 4px 0;
+}
+
+.bu-stat-item strong {
+  color: var(--kumo-text);
+  font-size: 14px;
+}
+
+/* Buttons */
+.bu-btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.bu-btn-primary {
+  background: var(--kumo-accent);
+  color: #fff;
+}
+.bu-btn-primary:hover { background: var(--kumo-accent-hover); }
+
+.bu-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--kumo-border);
+  color: var(--kumo-text-secondary);
+}
+.bu-btn-secondary:hover { background: rgba(255,255,255,0.05); color: var(--kumo-text); }
+
+/* Import Zone */
+.bu-import-zone {
+  display: none;
+}
+
+.bu-import-result {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.bu-import-result.success {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+  color: #66bb6a;
+}
+
+.bu-import-result.error {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.2);
+  color: #ef5350;
+}
+
+.hidden { display: none; }
+
+/* Storage Card */
+.bu-storage-card {
+  background: var(--kumo-bg-card);
+  border: 1px solid var(--kumo-border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.bu-storage-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--kumo-text-muted);
+  margin-bottom: 20px;
+}
+
+.bu-storage-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.bu-storage-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bu-storage-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--kumo-text-secondary);
+}
+
+.bu-storage-track {
+  height: 6px;
+  background: #1a1a35;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bu-storage-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.6s ease;
+}
+
+.bu-fill-words { background: var(--kumo-accent); }
+.bu-fill-srs { background: var(--kumo-warning); }
+.bu-fill-sentences { background: var(--kumo-success); }
+.bu-fill-progress { background: #8b5cf6; }
+
+.bu-storage-total {
+  font-size: 13px;
+  color: var(--kumo-text-muted);
+  text-align: right;
+}
+
+.bu-storage-total strong {
+  color: var(--kumo-text);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .bu-grid { grid-template-columns: 1fr; }
+  .bu-stats { grid-template-columns: 1fr; }
+}

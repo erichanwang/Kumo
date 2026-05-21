@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo — Vocabulary Quiz</title>
+  <link rel="stylesheet" href="stats.css" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body class="kumo-dark">
+  <div class="qz-container">
+    <header class="qz-header">
+      <div class="qz-header-left">
+        <button class="qz-back-btn" id="btn-back">← Back</button>
+        <h1 class="qz-title">🧠 Vocabulary Quiz</h1>
+      </div>
+      <div class="qz-header-stats">
+        <span id="qz-score-display">0 / 0</span>
+        <span class="qz-score-pct" id="qz-pct-display">0%</span>
+      </div>
+    </header>
+
+    <!-- Setup screen -->
+    <div class="qz-setup" id="qz-setup">
+      <div class="qz-setup-card">
+        <h2 class="qz-setup-title">Quiz Settings</h2>
+
+        <div class="qz-setup-row">
+          <label class="qz-setup-label">JLPT Level</label>
+          <div class="qz-level-grid" id="qz-levels">
+            <label class="qz-level-option" data-level="N5"><input type="checkbox" value="N5" checked /> N5</label>
+            <label class="qz-level-option" data-level="N4"><input type="checkbox" value="N4" checked /> N4</label>
+            <label class="qz-level-option" data-level="N3"><input type="checkbox" value="N3" checked /> N3</label>
+            <label class="qz-level-option" data-level="N2"><input type="checkbox" value="N2" /> N2</label>
+            <label class="qz-level-option" data-level="N1"><input type="checkbox" value="N1" /> N1</label>
+          </div>
+        </div>
+
+        <div class="qz-setup-row">
+          <label class="qz-setup-label" for="qz-count">Questions</label>
+          <select id="qz-count">
+            <option value="5">5 (Quick)</option>
+            <option value="10" selected>10 (Standard)</option>
+            <option value="20">20 (Challenge)</option>
+            <option value="0">All available</option>
+          </select>
+        </div>
+
+        <div class="qz-setup-row">
+          <label class="qz-setup-label">Question Type</label>
+          <div class="qz-type-options">
+            <label class="qz-type-option"><input type="radio" name="qz-type" value="reading" checked /> Reading → Word</label>
+            <label class="qz-type-option"><input type="radio" name="qz-type" value="meaning" /> Meaning → Word</label>
+          </div>
+        </div>
+
+        <div class="qz-setup-actions">
+          <button class="qz-btn qz-btn-primary qz-btn-lg" id="btn-start-quiz">🚀 Start Quiz</button>
+        </div>
+        <p class="qz-setup-hint" id="qz-setup-hint">Choose settings above and start your quiz!</p>
+      </div>
+    </div>
+
+    <!-- Quiz screen -->
+    <div class="qz-quiz hidden" id="qz-quiz">
+      <div class="qz-progress-bar">
+        <div class="qz-progress-fill" id="qz-progress-fill"></div>
+      </div>
+
+      <div class="qz-question-card">
+        <div class="qz-question-label" id="qz-question-label">What is the word for:</div>
+        <div class="qz-question-text" id="qz-question-text">—</div>
+
+        <div class="qz-options" id="qz-options"></div>
+      </div>
+
+      <div class="qz-feedback hidden" id="qz-feedback">
+        <div class="qz-feedback-icon" id="qz-feedback-icon">✅</div>
+        <div class="qz-feedback-text" id="qz-feedback-text">Correct!</div>
+        <div class="qz-feedback-detail" id="qz-feedback-detail"></div>
+        <button class="qz-btn qz-btn-primary" id="btn-next">Next →</button>
+      </div>
+    </div>
+
+    <!-- Results screen -->
+    <div class="qz-results hidden" id="qz-results">
+      <div class="qz-results-card">
+        <div class="qz-results-icon">🏆</div>
+        <h2 class="qz-results-title">Quiz Complete!</h2>
+
+        <div class="qz-results-stats">
+          <div class="qz-result-stat">
+            <span class="qz-result-value" id="qz-result-correct">0</span>
+            <span class="qz-result-label">Correct</span>
+          </div>
+          <div class="qz-result-stat">
+            <span class="qz-result-value" id="qz-result-total">0</span>
+            <span class="qz-result-label">Total</span>
+          </div>
+          <div class="qz-result-stat">
+            <span class="qz-result-value" id="qz-result-accuracy">0%</span>
+            <span class="qz-result-label">Accuracy</span>
+          </div>
+        </div>
+
+        <div class="qz-results-bar">
+          <div class="qz-results-fill" id="qz-results-fill"></div>
+        </div>
+
+        <div class="qz-results-review" id="qz-results-review"></div>
+
+        <div class="qz-results-actions">
+          <button class="qz-btn qz-btn-primary" id="btn-retry">🔄 Try Again</button>
+          <button class="qz-btn qz-btn-secondary" id="btn-back-setup">⚙️ Change Settings</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="quiz.ts"></script>
+</body>
+</html>

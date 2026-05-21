@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo — Word Bank</title>
+  <link rel="stylesheet" href="wordbank.css" />
+</head>
+<body>
+  <div class="wb-container">
+    <header class="wb-header">
+      <button class="wb-back-btn" id="btn-back">← Back</button>
+      <h1 class="wb-title">📚 Word Bank</h1>
+      <div class="wb-header-actions">
+        <button class="wb-export-btn" id="btn-batch">☑ Batch</button>
+        <button class="wb-export-btn" id="btn-quiz">🧠 Quiz</button>
+        <button class="wb-export-btn" id="btn-backup">💾 Backup</button>
+        <button class="wb-export-btn" id="btn-import-json">📥 Import</button>
+        <button class="wb-export-btn" id="btn-export">CSV</button>
+        <select class="wb-export-select" id="anki-format" title="Anki card format">
+          <option value="basic">Basic</option>
+          <option value="reversed">Reversed</option>
+          <option value="cloze">Cloze</option>
+        </select>
+        <button class="wb-export-btn" id="btn-anki">Anki</button>
+        <button class="wb-export-btn" id="btn-export-json">JSON</button>
+      </div>
+    </header>
+
+    <!-- Batch Controls -->
+    <div class="wb-batch-bar" id="batch-bar">
+      <span id="batch-count">0 selected</span>
+      <div class="wb-batch-actions" id="batch-actions" style="display:none">
+        <button class="wb-batch-btn" id="batch-srs">🔄 Add to SRS</button>
+        <button class="wb-batch-btn" id="batch-known">✓ Mark Known</button>
+        <button class="wb-batch-btn" id="batch-star">⭐ Toggle Star</button>
+        <button class="wb-batch-btn wb-batch-danger" id="batch-delete">🗑 Delete</button>
+      </div>
+    </div>
+
+    <div class="wb-controls">
+      <div class="wb-search">
+        <input type="text" id="search-input" placeholder="Search words..." />
+      </div>
+      <div class="wb-filters">
+        <select id="filter-jlpt">
+          <option value="">All JLPT</option>
+          <option value="N5">N5</option>
+          <option value="N4">N4</option>
+          <option value="N3">N3</option>
+          <option value="N2">N2</option>
+          <option value="N1">N1</option>
+        </select>
+        <select id="filter-known">
+          <option value="">All Status</option>
+          <option value="known">Known</option>
+          <option value="unknown">Learning</option>
+        </select>
+        <select id="filter-starred">
+          <option value="">All</option>
+          <option value="starred">Starred Only</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="wb-layout">
+      <div class="wb-table-container">
+        <table class="wb-table">
+          <thead>
+            <tr>
+              <th class="col-check" id="check-th" style="display:none"></th>
+              <th class="col-word">Word</th>
+              <th class="col-reading">Reading</th>
+              <th class="col-def">Definition</th>
+              <th class="col-jlpt">JLPT</th>
+              <th class="col-date">Saved</th>
+              <th class="col-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="wordbank-tbody">
+            <tr class="wb-empty">
+              <td colspan="8">No words saved yet. Hover over words on any webpage and click "⭐ Save".</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="wb-footer">
+      <span id="entry-count">0 entries</span>
+    </div>
+  </div>
+
+  <!-- Word Detail Panel -->
+  <div class="wd-overlay hidden" id="detail-overlay"></div>
+  <div class="wd-panel hidden" id="word-detail"></div>
+
+  <!-- Toast -->
+  <div class="toast hidden" id="toast"></div>
+
+  <script type="module" src="wordbank.ts"></script>
+</body>
+</html>

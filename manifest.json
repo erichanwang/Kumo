@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "Kumo",
+  "version": "0.0.1",
+  "description": "Read Japanese anywhere. Learn as you go.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://jisho.org/*"
+  ],
+  "commands": {
+    "toggle-furigana": {
+      "suggested_key": {
+        "default": "Alt+J",
+        "mac": "Alt+J"
+      },
+      "description": "Toggle furigana on/off"
+    },
+    "mark-known": {
+      "suggested_key": {
+        "default": "Alt+K",
+        "mac": "Alt+K"
+      },
+      "description": "Mark last hovered word as known"
+    },
+    "save-word": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Alt+S"
+      },
+      "description": "Save last hovered word to word bank"
+    },
+    "mine-sentence": {
+      "suggested_key": {
+        "default": "Alt+M",
+        "mac": "Alt+M"
+      },
+      "description": "Mine sentence for last hovered word"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.ts"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["dict/*", "click.mp3", "icon16.png", "icon48.png", "icon128.png", "kanji.html", "stats.html", "sentences.html", "backup.html", "quiz.html", "account.html", "wordbank.html", "srs.html", "assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

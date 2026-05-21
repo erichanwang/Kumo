@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo — Data Manager</title>
+  <link rel="stylesheet" href="stats.css" />
+  <link rel="stylesheet" href="backup.css" />
+</head>
+<body class="kumo-dark">
+  <div class="bu-container">
+    <header class="bu-header">
+      <div class="bu-header-left">
+        <button class="bu-back-btn" id="btn-back">← Back</button>
+        <h1 class="bu-title">💾 Data Manager</h1>
+      </div>
+    </header>
+
+    <div class="bu-grid">
+      <!-- Export Card -->
+      <div class="bu-card bu-card-export">
+        <div class="bu-card-icon">📤</div>
+        <h2 class="bu-card-title">Export All Data</h2>
+        <p class="bu-card-desc">Download a complete backup of all your Kumo data — word bank, SRS cards, mined sentences, settings, and progress.</p>
+        <div class="bu-stats" id="bu-export-stats">
+          <div class="bu-stat-item"><span>Words</span><strong id="bu-export-words">—</strong></div>
+          <div class="bu-stat-item"><span>SRS Cards</span><strong id="bu-export-srs">—</strong></div>
+          <div class="bu-stat-item"><span>Sentences</span><strong id="bu-export-sentences">—</strong></div>
+          <div class="bu-stat-item"><span>Progress Days</span><strong id="bu-export-days">—</strong></div>
+        </div>
+        <button class="bu-btn bu-btn-primary" id="btn-export">📥 Download Backup</button>
+      </div>
+
+      <!-- Import Card -->
+      <div class="bu-card bu-card-import">
+        <div class="bu-card-icon">📥</div>
+        <h2 class="bu-card-title">Import Data</h2>
+        <p class="bu-card-desc">Restore from a previous backup file. Merges with existing data — existing entries will NOT be overwritten.</p>
+        <div class="bu-import-zone" id="import-zone">
+          <div class="bu-import-icon">📁</div>
+          <p class="bu-import-text">Click to select a backup file</p>
+          <p class="bu-import-hint">.json files from Kumo backup</p>
+        </div>
+        <button class="bu-btn bu-btn-secondary" id="btn-import">📂 Choose File & Import</button>
+        <div id="bu-import-result" class="bu-import-result hidden"></div>
+      </div>
+    </div>
+
+    <!-- Storage Usage -->
+    <div class="bu-storage-card">
+      <h3 class="bu-storage-title">Storage Usage</h3>
+      <div class="bu-storage-bars">
+        <div class="bu-storage-item">
+          <div class="bu-storage-label"><span>Word Bank</span><span id="bu-storage-words">0 KB</span></div>
+          <div class="bu-storage-track"><div class="bu-storage-fill bu-fill-words" id="bu-storage-words-bar"></div></div>
+        </div>
+        <div class="bu-storage-item">
+          <div class="bu-storage-label"><span>SRS Cards</span><span id="bu-storage-srs">0 KB</span></div>
+          <div class="bu-storage-track"><div class="bu-storage-fill bu-fill-srs" id="bu-storage-srs-bar"></div></div>
+        </div>
+        <div class="bu-storage-item">
+          <div class="bu-storage-label"><span>Sentences</span><span id="bu-storage-sentences">0 KB</span></div>
+          <div class="bu-storage-track"><div class="bu-storage-fill bu-fill-sentences" id="bu-storage-sentences-bar"></div></div>
+        </div>
+        <div class="bu-storage-item">
+          <div class="bu-storage-label"><span>Progress</span><span id="bu-storage-progress">0 KB</span></div>
+          <div class="bu-storage-track"><div class="bu-storage-fill bu-fill-progress" id="bu-storage-progress-bar"></div></div>
+        </div>
+      </div>
+      <div class="bu-storage-total">Total: <strong id="bu-storage-total">0 KB</strong></div>
+    </div>
+  </div>
+
+  <script type="module" src="backup.ts"></script>
+</body>
+</html>

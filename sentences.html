@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumo — Sentence Bank</title>
+  <link rel="stylesheet" href="stats.css" />
+  <link rel="stylesheet" href="sentences.css" />
+</head>
+<body class="kumo-dark">
+  <div class="sent-container">
+    <header class="sent-header">
+      <div class="sent-header-left">
+        <button class="sent-back-btn" id="btn-back">← Back</button>
+        <h1 class="sent-title">📝 Sentence Bank</h1>
+      </div>
+      <div class="sent-header-actions">
+        <span class="sent-count" id="sent-count">0 sentences</span>
+        <button class="sent-export-btn" id="btn-export-json">Export JSON</button>
+      </div>
+    </header>
+
+    <div class="sent-controls">
+      <div class="sent-search">
+        <input type="text" id="search-input" placeholder="Search sentences or words..." />
+      </div>
+      <div class="sent-filters">
+        <select id="filter-tag">
+          <option value="">All Tags</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="sent-list" id="sent-list">
+      <div class="sent-empty">No sentences mined yet. Highlight Japanese text, click ✂️, and select "Mine Sentence".</div>
+    </div>
+  </div>
+
+  <script type="module" src="sentences.ts"></script>
+</body>
+</html>

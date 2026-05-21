@@ -1,0 +1,7 @@
+# Netlify configuration for Kumo SPA
+# Handles client-side routing by redirecting all paths to index.html
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
